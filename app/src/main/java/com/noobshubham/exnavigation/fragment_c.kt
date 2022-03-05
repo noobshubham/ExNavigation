@@ -13,6 +13,7 @@ import com.noobshubham.exnavigation.databinding.FragmentMainBinding
 
 class fragment_c : Fragment() {
 
+    // navArgs: allows you to Pass data to destination UI components.
     private val args: fragment_cArgs by navArgs()
 
     override fun onCreateView(
@@ -20,7 +21,7 @@ class fragment_c : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-         val view = inflater.inflate(R.layout.fragment_c, container, false)
+        val view = inflater.inflate(R.layout.fragment_c, container, false)
 
         val textMessage = args.message
         val tv: TextView = view.findViewById(R.id.message_text)
