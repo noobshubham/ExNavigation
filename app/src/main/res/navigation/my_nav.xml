@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.noobshubham.exnavigation.MainFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_fragment_a"
+            app:destination="@id/fragment_a"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_fragment_b"
+            app:destination="@id/fragment_b"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_a"
+        android:name="com.noobshubham.exnavigation.fragment_a"
+        android:label="Fragment A"
+        tools:layout="@layout/fragment_a" >
+        <action
+            android:id="@+id/action_fragment_a_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_b"
+        android:name="com.noobshubham.exnavigation.fragment_b"
+        android:label="Fragment B"
+        tools:layout="@layout/fragment_b" >
+        <action
+            android:id="@+id/action_fragment_b_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_fragment_b_to_fragment_c"
+            app:destination="@id/fragment_c"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_c"
+        android:name="com.noobshubham.exnavigation.fragment_c"
+        android:label="Fragment C"
+        tools:layout="@layout/fragment_c" >
+        <action
+            android:id="@+id/action_fragment_c_to_fragment_b"
+            app:destination="@id/fragment_b"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+        <argument
+            android:name="message"
+            app:argType="string"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+</navigation>
